@@ -18,7 +18,10 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.emailInp = new FormControl('', Validators.compose([
       Validators.required,
-      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      //Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')//Simple but after @ 3 character => alway true
+      //Validators.pattern("^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")//W3C, same
+      Validators.pattern("[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+
     ]));
     this.pwdInp = new FormControl('', Validators.compose([
       Validators.required,
@@ -27,7 +30,8 @@ export class AppComponent implements OnInit {
     this.fLogin = new FormGroup({
       email: this.emailInp,
       password: this.pwdInp
-    }, {updateOn:'blur'});
+    });
+    new FormControl('', {updateOn:'blur'})
   }
 
   get emailAdr(){
