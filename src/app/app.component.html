@@ -25,7 +25,7 @@
                   <input type="email" class="form-control" [formControl]="emailInp" id="email-input" placeholder="Enter Email" formControlName="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
                 </div>
                 <div class="input-group col-sm-9 offset-sm-3">
-                  <div *ngIf="emailInp.error?.required && (emailInp.dirty || emailInp.touched)" class="alert alert-danger">
+                  <div *ngIf="emailInp.errors?.required && (emailInp.dirty || emailInp.touched)" class="alert alert-danger">
                     Email is required.
                   </div>
                   <div *ngIf="emailInp.errors?.pattern" class="alert alert-danger">
