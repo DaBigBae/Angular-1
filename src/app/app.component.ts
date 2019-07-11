@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,  FormControl, AbstractControl,  Validators } from '@angular/forms';
+import { FormGroup,  FormControl, AbstractControl,  Validators, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -28,17 +28,10 @@ export class AppComponent implements OnInit {
       email: this.emailInp,
       password: this.pwdInp
     }, {updateOn:'blur'});
+  }
 
-    // this.fLogin = new FormGroup({
-    //   email: new FormControl('', Validators.compose([
-    //     Validators.required,
-    //     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    //   ])),
-    //   password: new FormControl('', Validators.compose([
-    //     Validators.required,
-    //     Validators.minLength(6)
-    //   ]))
-    // }, {updateOn: 'blur'});
+  get emailAdr(){
+    return this.fLogin.get('email')
   }
 
   onSubmit(){
