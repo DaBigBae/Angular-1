@@ -18,9 +18,8 @@ import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'ngbd-modal-config',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html'
 })
 export class NgbdModalConfig implements OnInit{
   @ViewChild('theModal', {static: false}) content: ElementRef;

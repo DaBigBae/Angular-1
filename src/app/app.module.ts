@@ -35,8 +35,7 @@ import { NgbdModalConfig } from './modal/modal.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    NgbdModalConfig
+    AppComponent
   ],
   exports:[
     NgbdModalConfig

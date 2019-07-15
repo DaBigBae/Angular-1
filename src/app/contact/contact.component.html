@@ -63,27 +63,12 @@
       </div>
     </div>
 
-    <!-- <ng-template #content let-c="close" let-d="dismiss">
-      <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Success</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
-      </div>
-    </ng-template> -->
-
     <!-- <button [disabled]="fContact.invalid" class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
     <div class="row mt-4">
       <div class="col text-center">
         <button [disabled]="fContact.invalid" type="submit" (click)="cmodal.open(content)"
           class="btn btn-lg btn-primary">Submit us your request!!!</button>
-        <ngbd-modal-config #cmodal></ngbd-modal-config>
+        <app-modal #cmodal></app-modal>
       </div>
     </div>
     <app-footer></app-footer>
