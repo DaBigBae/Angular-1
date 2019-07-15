@@ -1,0 +1,7 @@
+:disabled{
+    cursor: not-allowed;
+}
+
+input{
+    border: 1px solid white;
+}

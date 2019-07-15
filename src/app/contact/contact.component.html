@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="nav" [formGroup]="fContact">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col align-self-center text-center">
+        <h2>Contact</h2>
+        <h4>Talk to us about new work!</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et hic dolor enim maiores
+          consectetur soluta quis eveniet alias officiis iure similique,</p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-sm-3">
+        <div class="form-inline">
+          <input type="text" placeholder="Full name*" required [formControl]="nInp" class="form-control form-control-lg">
+          <span *ngIf="nInp.errors?.required && (nInp.dirty || nInp.touched)" class="text-danger">
+            Full name is required
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" placeholder="Company*" required [formControl]="cInp" class="form-control form-control-lg">
+        <span *ngIf="cInp.errors?.required && (cInp.dirty || cInp.touched)" class="text-danger">
+          Company is required
+        </span>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-sm-3">
+        <div class="form-inline">
+          <input type="email" placeholder="Email*" required [formControl]="eInp" class="form-control form-control-lg">
+          <span *ngIf="eInp.errors?.required && (eInp.dirty || eInp.touched)" class="text-danger">
+            Email is required
+          </span>
+          <span *ngIf="eInp.errors?.pattern" class="text-danger">
+            Email must have format abc@xyz.xxx
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <input type="tel" placeholder="Telephone*" required [formControl]="pInp" class="form-control form-control-lg">
+        <span *ngIf="pInp.errors?.required && (pInp.dirty || pInp.touched)" class="text-danger">
+          Phone is required
+        </span>
+      </div>
+    </div>
+    
+    <!-- <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Success</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+      </div>
+    </ng-template> -->
+    
+    <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <!-- <button [disabled]="fContact.invalid" type="submit" (click)="open(content)" class="btn btn-primary">Submit us your request</button> -->
+        <ngbd-modal-config></ngbd-modal-config>     
+      </div>
+    </div>
+    <app-footer></app-footer>
+    
+  </div>
+</div>
