@@ -1,16 +1,14 @@
-<ng-template #content let-c="close" let-d="dismiss">
-    <div class="modal-header">
-      <h4 class="modal-title text-success" id="modal-basic-title">Success</h4>
-      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>Your info has sent!!!</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">OK</button>
-    </div>
-  </ng-template>
-  
-  <button class="btn btn-lg btn-primary" (click)="open(content)">Submit us your request</button>
+<ng-template #theModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h6 class="modal-title text-success">Success</h6>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true"><b>&times;</b></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h6>Your info has sent!!!</h6>
+  </div>
+  <div class="modal-footer">
+    <button type="button" id="cancel-edit-btn" class="btn btn-primary" (click)="c('Close click')">Ok</button>
+  </div>
+</ng-template>

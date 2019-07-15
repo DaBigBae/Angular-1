@@ -42,3 +42,4 @@ export class ContactComponent implements OnInit {
     console.log(this.fContact);
   }
 }
+
