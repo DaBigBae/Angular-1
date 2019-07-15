@@ -45,11 +45,11 @@
         </span>
         <ng-container *ngIf="pInp.errors?.pattern; then thenTemplate; else elseTemplate"></ng-container>
         <ng-template #thenTemplate>
-          <span *ngIf="pInp.errors?.minlength" class="text-danger">
-            Phone must be numbers, and be longer than 9 digits
+          <span class="text-danger">
+            Phone must be numbers
           </span>
-          <span *ngIf="pInp.errors?.maxlenth" class="text-danger">
-            Phone must be numbers, and be shorter than 12 digits
+          <span *ngIf="pInp.errors?.minlength" class="text-danger">
+            , and be longer than 9 digits
           </span>
         </ng-template>
         <ng-template #elseTemplate>
