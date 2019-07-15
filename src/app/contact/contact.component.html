@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="nav" [formGroup]="fContact">
+<div class="nav">
   <div class="container">
     <div class="row mt-5">
       <div class="col align-self-center text-center">
@@ -10,9 +10,10 @@
       </div>
     </div>
     <div class="row justify-content-center mt-5">
-      <div class="col-sm-3">
+      <div class="col-sm-3" [formGroup]="fContact">
         <div class="form-inline">
-          <input type="text" placeholder="Full name*" required [formControl]="nInp" class="form-control form-control-lg">
+          <input type="text" placeholder="Full name*" required [formControl]="nInp"
+            class="form-control form-control-lg">
           <span *ngIf="nInp.errors?.required && (nInp.dirty || nInp.touched)" class="text-danger">
             Full name is required
           </span>
@@ -26,7 +27,7 @@
       </div>
     </div>
     <div class="row justify-content-center mt-3">
-      <div class="col-sm-3">
+      <div class="col-sm-3" [formGroup]="fContact">
         <div class="form-inline">
           <input type="email" placeholder="Email*" required [formControl]="eInp" class="form-control form-control-lg">
           <span *ngIf="eInp.errors?.required && (eInp.dirty || eInp.touched)" class="text-danger">
@@ -38,19 +39,30 @@
         </div>
       </div>
       <div class="col-sm-3">
-        <input type="tel" placeholder="Telephone*" required minlength="9" maxlength="12" [formControl]="pInp" class="form-control form-control-lg">
+        <input type="tel" placeholder="Telephone*" required [formControl]="pInp" class="form-control form-control-lg">
         <span *ngIf="pInp.errors?.required && (pInp.dirty || pInp.touched)" class="text-danger">
           Phone is required
         </span>
-        <span *ngIf="pInp.errors?.minlenght" class="text-danger">
-          Phone number lenght must be longer 9 digits
-        </span>
-        <span *ngIf="pInp.errors?.maxlenght" class="text-danger">
-          Phone number lenght must be shorter 12 digits
-        </span>
+        <ng-container *ngIf="pInp.errors?.pattern; then thenTemplate; else elseTemplate"></ng-container>
+        <ng-template #thenTemplate>
+          <span *ngIf="pInp.errors?.minlength" class="text-danger">
+            Phone must be numbers, and be longer than 9 digits
+          </span>
+          <span *ngIf="pInp.errors?.maxlenth" class="text-danger">
+            Phone must be numbers, and be shorter than 12 digits
+          </span>
+        </ng-template>
+        <ng-template #elseTemplate>
+          <span *ngIf="pInp.errors?.minlength" class="text-danger">
+            Phone number lenght must be longer 9 digits
+          </span>
+          <span *ngIf="pInp.errors?.maxlength" class="text-danger">
+            Phone number lenght must be shorter 12 digits
+          </span>
+        </ng-template>
       </div>
     </div>
-    
+
     <!-- <ng-template #content let-c="close" let-d="dismiss">
       <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
@@ -69,11 +81,12 @@
     <!-- <button [disabled]="fContact.invalid" class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
     <div class="row mt-4">
       <div class="col text-center">
-        <button [disabled]="fContact.invalid" type="submit" (click)="cmodal.open(content)" class="btn btn-lg btn-primary">Submit us your request!!!</button>
+        <button [disabled]="fContact.invalid" type="submit" (click)="cmodal.open(content)"
+          class="btn btn-lg btn-primary">Submit us your request!!!</button>
         <ngbd-modal-config #cmodal></ngbd-modal-config>
       </div>
     </div>
     <app-footer></app-footer>
-    
+
   </div>
 </div>

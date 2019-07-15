@@ -31,6 +31,6 @@ export class NgbdModalConfig implements OnInit{
   ngOnInit(){}
 
   open(){
-    this.modalService.open(this.content, { size: 'sm', backdrop: 'static' });
+    this.modalService.open(this.content, { size: 'sm', backdrop: 'static', centered: true });
   }
 }

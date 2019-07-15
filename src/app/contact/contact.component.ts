@@ -26,7 +26,8 @@ export class ContactComponent implements OnInit {
     this.pInp = new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(9),
-      Validators.maxLength(12)
+      Validators.maxLength(12),
+      Validators.pattern('^[0-9-+s()]*$')
     ]));
     this.nInp = new FormControl('', Validators.required);
     this.cInp = new FormControl('', Validators.required);

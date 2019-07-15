@@ -5,3 +5,19 @@
 input{
     border: 1px solid white;
 }
+
+.ng-valid[required], .ng-valid.required{
+    border: 1px solid green;
+}
+
+.ng-touched:not(form), .ng-dirty:not(form){
+    border: 1px solid red;
+}
+
+.col-sm-3.ng-invalid{
+    border: none;
+}
+
+.col-sm-3.ng-valid{
+    border: none;
+}
