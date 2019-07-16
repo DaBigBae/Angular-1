@@ -1,0 +1,19 @@
+.btnHome{
+    background-color: #9fa6ff;
+    color: #fff;
+    font-size: 12px;
+    padding: 21px 52px;
+    border-radius: 32px;
+    border: none;
+}
+
+.form-control{
+    padding-top: 21px !important;
+    padding-bottom: 21px;
+    font-size: 18spx;
+}
+
+input{
+    font-size: 18px;
+}
+

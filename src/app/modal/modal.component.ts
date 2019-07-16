@@ -14,23 +14,22 @@
 
 // }
 
-import { Component } from '@angular/core';
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'ngbd-modal-config',
-  templateUrl: './modal.component.html',
-  // add NgbModalConfig and NgbModal to the component providers
-  providers: [NgbModalConfig, NgbModal]
+  selector: 'app-modal',
+  templateUrl: './modal.component.html'
 })
-export class NgbdModalConfig {
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
-    // customize default values of modals used by this component tree
-    config.backdrop = 'static';
-    config.keyboard = false;
+export class NgbdModalConfig implements OnInit{
+  @ViewChild('theModal', {static: false}) content: ElementRef;
+
+  constructor( private modalService: NgbModal) {
   }
 
-  open(content) {
-    this.modalService.open(content);
+  ngOnInit(){}
+
+  open(){
+    this.modalService.open(this.content, { size: 'sm', backdrop: 'static', centered: true });
   }
 }

@@ -18,3 +18,13 @@
 :disabled{
     cursor: not-allowed;
 }
+
+button{
+    border: none;
+    background-color: transparent;
+    opacity: 0.4;
+}
+
+.dropdown-toggle::after{
+    display: none;
+}

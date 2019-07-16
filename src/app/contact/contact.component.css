@@ -5,3 +5,32 @@
 input{
     border: 1px solid white;
 }
+
+.ng-valid[required], .ng-valid.required{
+    border: 1px solid green;
+}
+
+input.ng-touched, input.ng-dirty{
+    border: 1px solid red;
+}
+
+.col-sm-3.ng-invalid{
+    border: none;
+}
+
+.col-sm-3.ng-valid{
+    border: none;
+}
+
+div{
+    background-color: #eaeaea;
+}
+
+.btn{
+    background-color: #9fa6ff;
+    color: #fff;
+    font-size: 12px;
+    padding: 21px 52px;
+    border-radius: 32px;
+    border: none;
+}

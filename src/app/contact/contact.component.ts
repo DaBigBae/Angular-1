@@ -5,7 +5,8 @@ const control = new FormControl('', { updateOn: 'blur' });
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html'
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
 
 export class ContactComponent implements OnInit {
@@ -25,7 +26,8 @@ export class ContactComponent implements OnInit {
     this.pInp = new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(9),
-      Validators.maxLength(12)
+      Validators.maxLength(12),
+      Validators.pattern('^[0-9-+s()]*$')
     ]));
     this.nInp = new FormControl('', Validators.required);
     this.cInp = new FormControl('', Validators.required);
@@ -41,3 +43,4 @@ export class ContactComponent implements OnInit {
     console.log(this.fContact);
   }
 }
+

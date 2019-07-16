@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Login Form';
+  imageLogoPath = './img/logo.png';
+  imageHBPath = './img/home-background.jpeg';
   constructor() {}
 }

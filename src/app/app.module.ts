@@ -14,7 +14,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { NgbdModalConfig } from './modal/modal.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +35,7 @@ import { NgbdModalConfig } from './modal/modal.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    NgbdModalConfig
+    AppComponent
   ],
   exports:[
     NgbdModalConfig
