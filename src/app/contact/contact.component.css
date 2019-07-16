@@ -33,7 +33,7 @@ div{
     padding: 21px 52px;
     border-radius: 32px;
     border: none;
-    letter-spacing: 1.9px;  
+    letter-spacing: 2px;  
 }
 
 p{
@@ -43,7 +43,7 @@ p{
 
 .form-control{
     padding: 30px;
-    font-weight: 800;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 13px;
     letter-spacing: 1.5px;
 }
