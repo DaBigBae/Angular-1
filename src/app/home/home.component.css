@@ -5,6 +5,7 @@
     padding: 21px 52px;
     border-radius: 32px;
     border: none;
+    letter-spacing: 1.5px;
 }
 
 .form-control{
@@ -17,3 +18,27 @@ input{
     font-size: 18px;
 }
 
+nav.img{
+    background-image: url("../../assets/img/home-background.jpeg");
+    background-position: center;
+    background-size: cover;
+    margin-top: -70px;
+}
+
+nav.nav2{
+    background-color: #e6ecfc;
+}
+
+.container{
+    padding-top: 150px;
+    padding-bottom: 220px;
+}
+
+h1{
+    font-size: 36pt;
+}
+
+h5{
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+}

@@ -33,4 +33,17 @@ div{
     padding: 21px 52px;
     border-radius: 32px;
     border: none;
+    letter-spacing: 1.9px;  
+}
+
+p{
+    color: #7f8c9b;
+    font-size: 18px;
+}
+
+.form-control{
+    padding: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1.5px;
 }
